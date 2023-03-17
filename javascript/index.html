@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptelés</title>
+    <style>
+        #kozepre {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">JavaScriptelés</h1>
+
+    <script>
+        document.writeln("Ez egy kiírás");
+        document.writeln("<br>");
+        document.writeln("Ez két kiírás");
+        document.writeln("<br>");
+        document.writeln("Ez három kiírás");
+
+    </script>
+    <div id="kozepre">Ez egy HTML sor</div>
+    <script>
+        document.write("A");
+        document.write("B");
+        document.write("C");
+        document.writeln("<br>");
+
+        szam = 15
+        document.writeln("szam=", szam);
+        document.writeln("<br>");
+        document.writeln(szam, " x 2=", szam * 2);
+        document.writeln("<br>");
+        document.writeln(szam, " / 5=", szam / 5);
+        document.writeln("<br>");
+
+        document.writeln(szam, " ^ 2=", szam ^ 2);
+        document.writeln("<br>");
+        document.writeln(szam, " ** 2=", szam ** 2);
+        document.writeln("<br>");
+
+        szam = szam+1;
+        document.write(szam)
+        document.writeln("<br>")
+        szam++
+        document.write(szam)
+        document.writeln("<br>")
+        szam--
+        document.write(szam)
+        document.writeln("<br>")
+
+        szam = szam/11
+        document.write(szam)
+        document.writeln("<br>")
+        document.writeln("<br>")
+
+        for (var i=1;i<=10;i++){
+            document.writeln(i," ",i**2);
+            document.writeln("<br>")
+        }
+        document.write(12/(6-6))
+        document.write("<br>")
+        document.write("alma"*2)
+        document.write("<br>")
+
+        document.writeln("12 % 10 =", 12%10)
+
+
+    </script>
+
+</body>
+
+</html>
