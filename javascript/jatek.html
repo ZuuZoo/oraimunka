@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gondoltam egy számot</title>
+    <script>
+        function nev() {
+            jatekosnev = document.getElementById("nevMezo").value
+            //document.writeln(jatekosnev)
+            document.getElementById("tunjel").innerHTML =
+                "Üdv: " + jatekosnev + "<br>" +
+                "Szeretnél játszani velem? " +
+                "<button onclick='igen()'>Igen</button>"+
+                "<button onclick='nem()'>Nem</button>"
+        }
+        function nem() {
+            document.getElementById("tunjel").innerHTML =
+                "Nem <br>" +
+                "A fenébe! Akkor viszlát: " + jatekosnev
+        }
+        function igen() {
+            gondolt=Math.floor(Math.random() * 100) + 1;
+            document.getElementById("tunjel").innerHTML =
+            "Tipped: <input id='tipp'> <button onclick='tipp()'>Tipp</button>"
+        }
+        function tipp() {
+            jatekostipp = document.getElementById("tipp").value
+            if (jatekostipp < gondolt) {
+                document.getElementById("szoveg").innerHTML =
+                "Nagyobb"
+            }
+            if (jatekostipp > gondolt) {
+                document.getElementById("szoveg").innerHTML =
+                "Kisebb"
+            }
+            if (jatekostipp == gondolt) {
+                document.getElementById("szoveg").innerHTML =
+                "Talált! A szám: " + gondolt + ""
+
+            }
+            proba++
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 align="center">Gondoltam egy számot</h1>
+    <h2 align="center">Találd ki!</h2>
+    <div id="tunjel" align="center">
+        Kérem a neved: <input id="nevMezo"> <button onclick="nev()">Bevitel</button>
+    </div>
+    <div id="szoveg" align="center">
+
+    </div>
+</body>
+
+</html>
