@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kattint</title>
+    <style>
+        #kocka {
+            width: 100px;
+            height: 100px;
+            background-color: #ff00ff;
+            /*background: #ff00ff;*/
+            position: absolute;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        kattszam = 0
+        talatamszam = 0
+        tempo = 1000
+        function kattintottam() {
+            kattszam++
+            document.getElementById("katt").innerHTML = kattszam;
+        }
+        var mozogj = setInterval(function () {
+            var x = Math.floor(Math.random() * 1800);
+            var y = Math.floor(Math.random() * 900);
+            divem = document.getElementById("kocka");
+            //document.getElementById("kocka").style.left=x+"px"
+            //document.getElementById("kocka").style.top=y+"px"
+            divem.style.left = x + "px";
+            divem.style.top = y + "px";
+            if (talatamszam >= 5) {
+                tempo = 800
+            }
+            if (talatamszam >= 10) {
+                tempo = 750
+            }
+            if (talatamszam >= 15) {
+                tempo = 550
+            }
+            if (talatamszam >= 20) {
+                tempo = 400
+            }
+            if (talatamszam >= 25) {
+                tempo = 150
+            }
+            if (talatamszam >= 30) {
+                tempo = 1
+            }
+        }, tempo)
+        document.addEventListener("mouseup", function () {
+            kattintottam()
+        }, true)
+        /*document.getElementById("kocka").addEventListener("click",
+        function(){
+            talatamszam++
+            document.getElementById("talalt").innerHTML=talatamszam;
+        })*/
+        function talaltgomb() {
+            talatamszam++
+            document.getElementById("talalt").innerHTML = talatamszam;
+        }
+    </script>
+</head>
+
+<body>
+    <p>Kattintás: <span id="katt">0</span></p>
+    <p>Talált: <span id="talalt">0</span></p>
+    <button onclick="kattintottam()">KATTTTTTTTTTTTTTTT</button>
+    <div id="kocka" , onclick="talaltgomb()"></div>
+</body>
+
+</html>
