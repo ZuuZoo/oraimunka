@@ -19,11 +19,15 @@
     <script>
         kattszam = 0
         talatamszam = 0
-        tempo = 1000
+        kattinthatsz = true
         function kattintottam() {
-            kattszam++
-            document.getElementById("katt").innerHTML = kattszam;
+            if (kattinthatsz == true) {
+                kattszam++
+                document.getElementById("katt").innerHTML = kattszam;
+                kattinthatsz = false
+            }
         }
+
         var mozogj = setInterval(function () {
             var x = Math.floor(Math.random() * 1800);
             var y = Math.floor(Math.random() * 900);
@@ -32,25 +36,9 @@
             //document.getElementById("kocka").style.top=y+"px"
             divem.style.left = x + "px";
             divem.style.top = y + "px";
-            if (talatamszam >= 5) {
-                tempo = 800
-            }
-            if (talatamszam >= 10) {
-                tempo = 750
-            }
-            if (talatamszam >= 15) {
-                tempo = 550
-            }
-            if (talatamszam >= 20) {
-                tempo = 400
-            }
-            if (talatamszam >= 25) {
-                tempo = 150
-            }
-            if (talatamszam >= 30) {
-                tempo = 1
-            }
-        }, tempo)
+            kattinthatsz = true
+        }, 1000)
+
         document.addEventListener("mouseup", function () {
             kattintottam()
         }, true)
@@ -69,7 +57,7 @@
 <body>
     <p>Kattintás: <span id="katt">0</span></p>
     <p>Talált: <span id="talalt">0</span></p>
-    <button onclick="kattintottam()">KATTTTTTTTTTTTTTTT</button>
+    <!--button onclick="kattintottam()">KATTTTTTTTTTTTTTTT</button-->
     <div id="kocka" , onclick="talaltgomb()"></div>
 </body>
 
